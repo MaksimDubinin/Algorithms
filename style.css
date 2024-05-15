@@ -16,19 +16,49 @@ body {
 
 #startText {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     color: white;
-    padding-top: 20px;
 }
 
 .text {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 830px;
+}
+
+.algText {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-left: 7px;
+    text-align: justify;
+    min-width: 390px;
+    max-width: 390px;
+}
+
+.algName {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-left: 7px;
+    color: white;
+    margin-left: 13%;
+}
+
+#realizationText {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    color: white;
+    margin-right: 130px;
+}
+
+.codeText {
+    margin-left: 7px;
+    color: white;
 }
 
 #btnTest {
@@ -49,8 +79,8 @@ body {
 }
 
 .cards {
-    height: 400px;
-    width: 600px;
+    height: 450px;
+    width: 800px;
     background-color: rgba(74, 46, 255, 0.15);
     border-radius: 10px;
     border: 4px solid rgba(96, 112, 255, 0.2);
@@ -63,7 +93,7 @@ body {
 
 #btnPrev {
     position: relative;
-    top: 180px;
+    top: 205px;
     width: 40px;
     height: 40px;
     left: -50px;
@@ -83,10 +113,10 @@ body {
 
 #btnNext {
     position: relative;
-    top: 180px;
+    top: 205px;
     width: 40px;
     height: 40px;
-    right: -570px;
+    right: -770px;
     border: 3px solid rgb(96, 112, 255, 0.55);
     border-radius: 10px;
     background-color: transparent;
@@ -113,17 +143,38 @@ body {
 }
 
 .sliderParent article {
-    min-width: 600px;
+    min-width: 800px;
     height: 100%;
     border-radius: 8px;
 }
 
+.divsTitle {
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+}
+
+.tableO {
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    margin-left: 8%;
+    padding: 3px;
+}
+
+.divsContent {
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+}
 .sliderParent article:nth-child(1) {
     
 }
 
 .sliderParent article:nth-child(2) {
-    
+    background-color: antiquewhite;   
 }
 
 .sliderParent article:nth-child(3) {
