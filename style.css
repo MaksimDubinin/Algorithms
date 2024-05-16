@@ -65,6 +65,7 @@ body {
     font-family: 'Courier New', sans-serif;
     font-size: 12px;
     user-select: none;
+    min-width: 370px;
 }
 
 #btnTest {
@@ -166,7 +167,7 @@ body {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    margin-left: 7%;
+    margin-left: 33%;
     margin-top: 10px;
     padding: 3px;
 }
@@ -176,17 +177,6 @@ body {
     align-items: center ;
     justify-content: space-between;
     max-width: 799px;
-}
-.sliderParent article:nth-child(1) {
-    
-}
-
-.sliderParent article:nth-child(2) {
-      
-}
-
-.sliderParent article:nth-child(3) {
-    
 }
 
 .t1 {
@@ -200,7 +190,6 @@ body {
 .t3 {
     margin-left: 24px;
 }
-
 .t4 {
     margin-left: 32px;
 }

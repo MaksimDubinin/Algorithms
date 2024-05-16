@@ -40,6 +40,7 @@ const algorithmsApp = (input) => {
     const sliderChild2 = document.createElement('article');
     const sliderChild3 = document.createElement('article');
     const sliderChild4 = document.createElement('article');
+    const sliderChild5 = document.createElement('article');
 
     const divTitleBubble = document.createElement('div');
     divTitleBubble.setAttribute('class', 'divsTitle');
@@ -320,10 +321,85 @@ const algorithmsApp = (input) => {
     sliderChild4.append(tableQuick);
 
 
+    const divTitleSelection = document.createElement('div');
+    divTitleSelection.setAttribute('class', 'divsTitle');
+
+    const selectionTextName = document.createElement('p');
+    selectionTextName.setAttribute('class', 'algName');
+    selectionTextName.innerHTML = 'Сортировка выбором'
+
+    const realizationText5 = document.createElement('p');
+    realizationText5.setAttribute('class', 'realizationText');
+    realizationText5.innerHTML = "Реализация на JS";
+
+    divTitleSelection.append(selectionTextName);
+    divTitleSelection.append(realizationText5);
+
+    const divContentSelection = document.createElement('div');
+    divContentSelection.setAttribute('class', 'divsContent');
+
+    const selectionText = document.createElement('p');
+    selectionText.setAttribute('class', 'algText');
+    selectionText.innerHTML = 'На каждом i-ом шаге алгоритма находим i-ый минимальный элемент и меняем его местами с  i-ым элементом в массиве. Таким образом будет получен массив, отсортированный по не убыванию.';
+    divContentSelection.append(selectionText);
+
+    const codeSelection = document.createElement('code');
+    codeSelection.setAttribute('class', 'codeText');
+    codeSelection.innerHTML = '\
+    function selectionSort(array) {<br>\
+        <span class="t1"></span>let n = array.length;<br>\
+        <span class="t1"></span>for(let i = 0; i < n; i++) {<br>\
+            <span class="t2"></span>let min = i;<br>\
+            <span class="t2"></span>for(let j = i+1; j < n; j++){<br>\
+                <span class="t3"></span>if(array[j] < array[min]) {<br>\
+                    <span class="t4"></span>min=j;<br>\
+                    <span class="t3"></span>}<br>\
+                    <span class="t2"></span>}<br>\
+                    <span class="t2"></span>if (min != i) {<br>\
+                        <span class="t3"></span>let tmp = array[i];<br>\
+                        <span class="t3"></span>array[i] = array[min];<br>\
+                        <span class="t3"></span>array[min] = tmp;<br>\
+                        <span class="t2"></span>}<br>\
+                        <span class="t1"></span>}<br>\
+                        <span class="t1"></span>return array;<br>\
+    }';
+
+    divContentSelection.append(codeSelection);
+
+    const tableSelection = document.createElement('table');
+    tableSelection.setAttribute('class', 'tableO');
+
+    let rowFirstSelection = tableSelection.insertRow();
+    let titleTimeSelection = rowFirstSelection.insertCell();
+    let titleBestSelection = rowFirstSelection.insertCell();
+    let titleMidSelection  = rowFirstSelection.insertCell();
+    let titleWorstSelection = rowFirstSelection.insertCell();
+
+    titleTimeSelection.innerHTML = 'Время'
+    titleBestSelection.innerHTML = 'Лучшее'
+    titleMidSelection.innerHTML = 'Среднее'
+    titleWorstSelection.innerHTML = 'Худшее'
+
+    let rowSecondSelection = tableSelection.insertRow();
+    let nameSelection = rowSecondSelection.insertCell();
+    let firstTimeSelection = rowSecondSelection.insertCell();
+    let secondTimeSelection = rowSecondSelection.insertCell();
+    let thirdTimeSelection = rowSecondSelection.insertCell();
+
+    nameSelection.innerHTML = 'Selection'
+    firstTimeSelection.innerHTML = 'O(n^2)'
+    secondTimeSelection.innerHTML = 'O(n^2)'
+    thirdTimeSelection.innerHTML = 'O(n^2)'
+
+    sliderChild5.append(divTitleSelection);
+    sliderChild5.append(divContentSelection);
+    sliderChild5.append(tableSelection);
+
     sliderParent.append(sliderChild1);
     sliderParent.append(sliderChild2);
     sliderParent.append(sliderChild3);
     sliderParent.append(sliderChild4);
+    sliderParent.append(sliderChild5);
     algorithmCard.append(sliderParent);
 
     let offset = 0;
@@ -339,7 +415,7 @@ const algorithmsApp = (input) => {
     });
 
     btnNext.addEventListener('click', function(event) {
-        if (offset >= 2400) {
+        if (offset >= 3200) {
             return
         }
         offset += 800;
