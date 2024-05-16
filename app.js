@@ -1,8 +1,5 @@
 const algorithmsApp = (input) => {
 
-    const algorithmNames = [];
-    
-
     const container = document.getElementById(input);
     const wrapper = document.createElement("section");
     wrapper.setAttribute('class', 'appAlgorithms');
@@ -20,8 +17,6 @@ const algorithmsApp = (input) => {
     const algorithmCard = document.createElement("div");
     algorithmCard.setAttribute('class', 'cards');
 
-    
-
     wrapper.append(algorithmCard);
 
     const btnTest = document.createElement('button');
@@ -35,7 +30,6 @@ const algorithmsApp = (input) => {
     btnNext.innerHTML = ">";
     btnNext.setAttribute('id', 'btnNext');
 
-
     algorithmCard.append(btnPrev);
     algorithmCard.append(btnNext);
 
@@ -45,6 +39,7 @@ const algorithmsApp = (input) => {
     const sliderChild1 = document.createElement('article');
     const sliderChild2 = document.createElement('article');
     const sliderChild3 = document.createElement('article');
+    const sliderChild4 = document.createElement('article');
 
     const divTitleBubble = document.createElement('div');
     divTitleBubble.setAttribute('class', 'divsTitle');
@@ -253,9 +248,82 @@ const algorithmsApp = (input) => {
 
     sliderChild3.append(tableShell);
 
+    const divTitleQuick = document.createElement('div');
+    divTitleQuick.setAttribute('class', 'divsTitle');
+
+    const quickTextName = document.createElement('p');
+    quickTextName.setAttribute('class', 'algName');
+    quickTextName.innerHTML = "Быстрая сортировка";
+
+    divTitleQuick.append(quickTextName);
+
+    const realizationText4 = document.createElement('p');
+    realizationText4.setAttribute('class', 'realizationText');
+    realizationText4.innerHTML = "Реализация на JS";
+
+    sliderChild4.append(divTitleQuick);
+    divTitleQuick.append(realizationText4);
+
+    const divContentQuick = document.createElement('div');
+    divContentQuick.setAttribute('class', 'divsContent');
+
+    const quickText = document.createElement('p');
+    quickText.setAttribute('class', 'algText');
+    quickText.innerHTML = "Быстрый метод сортировки функционирует по принципу \"разделяй и властвуй\" .QuickSort является существенно улучшенным вариантом алгоритма сортировки с помощью прямого обмена (его варианты известны как «Пузырьковая сортировка» и «Шейкерная сортировка»), известного в том числе своей низкой эффективностью. Принципиальное отличие состоит в том, что в первую очередь производятся перестановки на наибольшем возможном расстоянии и после каждого прохода элементы делятся на две независимые группы."
+
+    const codeQuick = document.createElement('code');
+    codeQuick.setAttribute('class', 'codeText');
+    codeQuick.innerHTML = '\
+    function QuickSort(array) {<br>\
+        <span class="t1"></span>if (arr.length < 2) return arr;<br>\
+        <span class="t1"></span>let pivot = arr[0];<br>\
+        <span class="t1"></span>const left = [];<br>\
+        <span class="t1"></span>const right = [];<br>\
+        <span class="t1"></span>for (let i = 1; i < arr.length; i++) {<br>\
+            <span class="t2"></span>if (pivot > arr[i]) {<br>\
+                <span class="t3"></span>left.push(arr[i]);<br>\
+                <span class="t2"></span>} else {<br>\
+                <span class="t3"></span>right.push(arr[i]);<br>\
+                <span class="t2"></span>}<br>\
+                <span class="t1"></span>}<br>\
+                <span class="t1"></span>return quickSort(left).concat(pivot, quickSort(right));<br>\
+      }';
+    divContentQuick.append(quickText);
+    divContentQuick.append(codeQuick);
+    sliderChild4.append(divContentQuick);
+
+    const tableQuick = document.createElement('table');
+    tableQuick.setAttribute('class', 'tableO');
+
+    let rowFirstQuick = tableQuick.insertRow();
+    let titleTimeQuick = rowFirstQuick.insertCell();
+    let titleBestQuick= rowFirstQuick.insertCell();
+    let titleMidQuick = rowFirstQuick.insertCell();
+    let titleWorstQuick = rowFirstQuick.insertCell();
+
+    titleTimeQuick.innerHTML = 'Время'
+    titleBestQuick.innerHTML = 'Лучшее'
+    titleMidQuick.innerHTML = 'Среднее'
+    titleWorstQuick.innerHTML = 'Худшее'
+
+    let rowSecondQuick = tableQuick.insertRow();
+    let nameQuick = rowSecondQuick.insertCell();
+    let firstTimeQuick = rowSecondQuick.insertCell();
+    let secondTimeQuick = rowSecondQuick.insertCell();
+    let thirdTimeQuick = rowSecondQuick.insertCell();
+
+    nameQuick.innerHTML = 'Quick'
+    firstTimeQuick.innerHTML = 'O(n * log(n))'
+    secondTimeQuick.innerHTML = 'O(n * log(n))'
+    thirdTimeQuick.innerHTML = 'O(n^2)'
+
+    sliderChild4.append(tableQuick);
+
+
     sliderParent.append(sliderChild1);
     sliderParent.append(sliderChild2);
     sliderParent.append(sliderChild3);
+    sliderParent.append(sliderChild4);
     algorithmCard.append(sliderParent);
 
     let offset = 0;
@@ -271,7 +339,7 @@ const algorithmsApp = (input) => {
     });
 
     btnNext.addEventListener('click', function(event) {
-        if (offset >= 1600) {
+        if (offset >= 2400) {
             return
         }
         offset += 800;
