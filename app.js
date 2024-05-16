@@ -181,10 +181,77 @@ const algorithmsApp = (input) => {
     firstTimeShaker.innerHTML = 'O(n)'
     secondTimeShaker.innerHTML = 'O(n^2)'
     thirdTimeShaker.innerHTML = 'O(n^2)'
-
-
     sliderChild2.append(tableShaker);
 
+    const divTitleShell = document.createElement('div');
+    divTitleShell.setAttribute('class', 'divsTitle');
+    const shellTextName = document.createElement('p');
+    shellTextName.setAttribute('class', 'algName')
+    shellTextName.innerHTML = 'Сортировка Шелла';
+
+    const realizationText3 = document.createElement('p');
+    realizationText3.setAttribute('class', 'realizationText');
+    realizationText3.innerHTML = "Реализация на JS";
+
+    divTitleShell.append(shellTextName);
+    divTitleShell.append(realizationText3);
+
+    divTitleShell.append(shellTextName);
+    divTitleShell.append(realizationText3);
+
+    const divContentShell = document.createElement('div');
+    divContentShell.setAttribute('class','divsContent');
+
+    const shellText = document.createElement('p');
+    shellText.setAttribute('class', 'algText');
+    shellText.innerHTML = 'Алгоритм сортировки, являющийся усовершенствованным вариантом сортировки вставками. Идея метода Шелла состоит в сравнении элементов, стоящих не только рядом, но и на определённом расстоянии друг от друга.'
+    divContentShell.append(shellText);
+
+    const codeShell = document.createElement('code');
+    codeShell.setAttribute('class', 'codeText')
+    codeShell.innerHTML = '\
+    function Shell(array) {<br>\
+        <span class="t1"></span>let d = Math.floor(array.length / 2);<br>\
+        <span class="t1"></span>while (d >= 1) {<br>\
+            <span class="t2"></span>for (let i = d; i < array.length; i++) {<br>\
+                <span class="t3"></span>let j = i;<br>\
+                <span class="t3"></span>while (j >= d && array[j - d] > array[j]) {<br>\
+                    <span class="t4"></span>[array[j], array[j - d]] = [array[j - d], array[j]];<br>\
+                    <span class="t4"></span>j -= d;<br>\
+                    <span class="t3"></span>}<br>\
+                    <span class="t2"></span>}<br>\
+                    <span class="t2"></span>d = Math.floor(d / 2);<br>\
+                    <span class="t1"></span>}<br>\
+      }';
+    divContentShell.append(codeShell);
+    sliderChild3.append(divTitleShell);
+    sliderChild3.append(divContentShell);
+
+    const tableShell = document.createElement('table');
+    tableShell.setAttribute('class', 'tableO')
+    let rowFirstShell = tableShell.insertRow();
+    let titleTimeShell = rowFirstShell.insertCell();
+    let titleBestShell= rowFirstShell.insertCell();
+    let titleMidShell = rowFirstShell.insertCell();
+    let titleWorstShell = rowFirstShell.insertCell();
+
+    titleTimeShell.innerHTML = 'Время'
+    titleBestShell.innerHTML = 'Лучшее'
+    titleMidShell.innerHTML = 'Среднее'
+    titleWorstShell.innerHTML = 'Худшее'
+
+    let rowSecondShell = tableShell.insertRow();
+    let nameShell = rowSecondShell.insertCell();
+    let firstTimeShell = rowSecondShell.insertCell();
+    let secondTimeShell = rowSecondShell.insertCell();
+    let thirdTimeShell = rowSecondShell.insertCell();
+
+    nameShell.innerHTML = 'Shell'
+    firstTimeShell.innerHTML = 'O(n * log^2(n))'
+    secondTimeShell.innerHTML = 'Зависит от <br>выбора шага'
+    thirdTimeShell.innerHTML = 'O(n^2)'
+
+    sliderChild3.append(tableShell);
 
     sliderParent.append(sliderChild1);
     sliderParent.append(sliderChild2);
