@@ -1,4 +1,4 @@
-const algorithmsApp = (input) => {
+const appAlgorithms = (input) => {
 
     const container = document.getElementById(input);
     const wrapper = document.createElement("section");
@@ -6,11 +6,11 @@ const algorithmsApp = (input) => {
 
     const startText = document.createElement("p");
     startText.setAttribute('id', 'startText');
-    startText.innerHTML = "Сайт для изучения алгоритмов сортировки";
+    startText.innerHTML = "Приложение для изучения алгоритмов сортировки";
     wrapper.append(startText);
 
     const introductionText = document.createElement("p");
-    introductionText.innerHTML = "Данный сайт предназначен для изучения алгоритмов сортировки. В конце изучения Вам будет предоставлена воможность проверить свои знания на основе изученного материала.";
+    introductionText.innerHTML = "Данное приложение предназначено для изучения алгоритмов сортировки. В конце изучения Вам будет предоставлена воможность проверить свои знания.";
     introductionText.setAttribute('class', 'text'); 
     wrapper.append(introductionText);
 
@@ -18,10 +18,6 @@ const algorithmsApp = (input) => {
     algorithmCard.setAttribute('class', 'cards');
 
     wrapper.append(algorithmCard);
-
-    const btnTest = document.createElement('button');
-    btnTest.innerHTML = "Начать тестирование";
-    btnTest.setAttribute('id', 'btnTest');
 
     const btnPrev = document.createElement('button');
     btnPrev.innerHTML = "<";
@@ -424,11 +420,6 @@ const algorithmsApp = (input) => {
             behavior: 'smooth'
         });
     });
-
-    btnTest.addEventListener('click', function(event) {
     
-    });
-    wrapper.append(btnTest);
-
     container.append(wrapper);
 }
